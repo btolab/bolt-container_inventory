@@ -1,6 +1,5 @@
 {
   "description": "Generate targets from Docker host",
   "files": ["ruby_task_helper/files/task_helper.rb"],
-  "input_method": "stdin",
-  "private": true
+  "input_method": "stdin"
 }
