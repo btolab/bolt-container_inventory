@@ -1,0 +1,14 @@
+{
+  "name": "nwops-container_inventory",
+  "version": "0.1.0",
+  "author": "corey@nwops.io",
+  "summary": "Enumerates various container runtimes for bolt inventory",
+  "license": "Apache-2.0",
+  "source": "",
+  "dependencies": [
+    {"name":"puppetlabs-ruby_task_helper","version_requirement":">= 0.4.0"}
+  ],
+  "pdk-version": "1.18.0",
+  "template-url": "pdk-default#1.18.0",
+  "template-ref": "tags/1.18.0-0-g095317c"
+}
