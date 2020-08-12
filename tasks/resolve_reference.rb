@@ -12,7 +12,6 @@ require_relative task_helper
 
 # Retrieves hosts from the docker host
 class DockerInventory < TaskHelper
-  TRANSPORT = 'docker://'
   attr_reader :options
 
   def resolve_reference(opts)
@@ -55,13 +54,13 @@ class DockerInventory < TaskHelper
           }
         end
         name = options[:use_hostname] ? container_hostname(container_data(container_id)) : container_id
-        groups[group_name][:targets] << {uri: "#{TRANSPORT}#{name}" } 
+        groups[group_name][:targets] << {uri: "#{name}" } 
       end
       groups.values
     elsif format == 'targets'
       dataset.map do |container_id| 
         name = options[:use_hostname] ? container_hostname(container_data(container_id)) : container_id
-        {uri: "#{TRANSPORT}#{name}" } 
+        {uri: "#{name}" } 
       end
     else
       raise TaskHelper::Error.new("Unknown format: #{format}", 'bad/data')
