@@ -1,4 +1,3 @@
-
 #!/usr/bin/env ruby
 
 task_helper = [
@@ -18,8 +17,8 @@ class DockerInventory < TaskHelper
 
   def resolve_reference(opts)
     @options = opts
-    format = opts[:format] || 'groups'
-    group_name_prefix = opts[:group_name_prefix] || ''
+    format = opts[:format] 
+    group_name_prefix = opts[:group_name_prefix]
     parse_data(containers, format, group_name_prefix)
   end
 
@@ -48,11 +47,11 @@ class DockerInventory < TaskHelper
     if format == 'groups'
       groups = dataset.each_with_object({}) do |container_id, groups|
         cdata = container_data(container_id)
-        group_name = compose_project(cdata) || 'ungrouped_containers'
+        group_name = compose_project(cdata) || @options['ungrouped_name']
         unless groups.key?(group_name)
           groups[group_name] = {
             name: group_name,
-            targets: [],
+            targets: []
           }
         end
         name = options[:use_hostname] ? container_hostname(container_data(container_id)) : container_id
@@ -70,9 +69,14 @@ class DockerInventory < TaskHelper
   end
 
   def task(opts)
+    opts[:format] ||= 'groups'
+    opts[:use_hostname] = true if opts[:use_hostname].nil? 
+    opts[:group_name_prefix] ||= ''
+    opts[:ungrouped_name] || 'ungrouped_containers'
     data = resolve_reference(opts)
     return { value: data }
   rescue TaskHelper::Error => e
+    puts opts.inspect
     # ruby_task_helper doesn't print errors under the _error key, so we have to
     # handle that ourselves
     return { _error: e.to_h }

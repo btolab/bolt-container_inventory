@@ -13,6 +13,11 @@
       "description": "Prefix for the group name",
       "default": ""
     },
+    "ungrouped_name": {
+      "type": "String",
+      "description": "Group name for ungrouped containers",
+      "default": "ungrouped_containers"
+    },
     "format": {
       "type": "Enum[groups, targets]",
       "description": "How to organize the containers found",
