@@ -1,5 +1,22 @@
 {
   "description": "Generate targets from Docker host",
   "files": ["ruby_task_helper/files/task_helper.rb"],
-  "input_method": "stdin"
+  "input_method": "stdin",
+  "parameters": {
+    "use_hostname": {
+      "type": "Boolean",
+      "description": "Use the container hostname instead of the id",
+      "default": true
+    }, 
+    "group_name_prefix": {
+      "type": "String",
+      "description": "Prefix for the group name",
+      "default": ""
+    },
+    "format": {
+      "type": "Enum[groups, targets]",
+      "description": "How to organize the containers found",
+      "default": "groups"
+    }
+  }
 }
