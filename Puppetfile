@@ -1,0 +1,1 @@
+mod 'puppetlabs-ruby_task_helper', '0.5.1'

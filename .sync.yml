@@ -1,0 +1,11 @@
+appveyor.yml:
+  delete: true
+Gemfile:
+  required:
+    ':development':
+      - gem: bolt
+        version: '>= 2.24.1'
+.gitignore:
+  required:
+    - modules/
+    - bolt-debug.log
