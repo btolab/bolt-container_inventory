@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "source": "https://gitlab.com/nwops/bolt-container_inventory.git",
   "project_page": "https://gitlab.com/nwops/bolt-container_inventory",
+  "issues_url": "https://gitlab.com/nwops/bolt-container_inventory/-/issues",
   "dependencies": [
     {
       "name": "puppetlabs-ruby_task_helper",
