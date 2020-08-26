@@ -8,6 +8,7 @@ AllCops:
   Include:
   - "./**/*.rb"
   Exclude:
+  - modules/**/*
   - bin/*
   - ".vendor/**/*"
   - "**/Gemfile"
