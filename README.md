@@ -22,6 +22,14 @@ groups:
       use_hostname: true
 ```
 
+For fixtures:
+```
+# modulepath/.fixtures.yml
+
+repositories:
+  container_inventory: 'https://gitlab.com/nwops/bolt-container_inventory'
+```
+
 
 ## Usage
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require 'english'
+require 'English'
 
 task_helper = [
   # During a real bolt call, ruby_task_helper modules is installed in same directory as this module
@@ -19,8 +19,8 @@ class DockerInventory < TaskHelper
     opts[:use_hostname] = true if opts[:use_hostname].nil?
     opts[:group_name_prefix] ||= ''
     opts[:ungrouped_name] || 'ungrouped_containers'
-    data = resolve_reference(opts)
-    return { value: data }
+    targets = resolve_reference(opts)
+    return { value: targets }
   rescue TaskHelper::Error => e
     puts opts.inspect
     # ruby_task_helper doesn't print errors under the _error key, so we have to
