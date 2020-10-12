@@ -1,6 +1,6 @@
 {
   "name": "nwops-container_inventory",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "NWOPS, LLC",
   "summary": "Enumerates various container runtimes for bolt inventory",
   "license": "Apache-2.0",
