@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'english'
 
 task_helper = [
   # During a real bolt call, ruby_task_helper modules is installed in same directory as this module
