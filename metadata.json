@@ -1,6 +1,6 @@
 {
   "name": "nwops-container_inventory",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "NWOPS, LLC",
   "summary": "Enumerates various container runtimes for bolt inventory",
   "license": "Apache-2.0",
@@ -10,7 +10,7 @@
   "dependencies": [
     {
       "name": "puppetlabs-ruby_task_helper",
-      "version_requirement": "= 0.5.1"
+      "version_requirement": ">= 0.5.1 < 1.0.0"
     }
   ],
   "operatingsystem_support": [
